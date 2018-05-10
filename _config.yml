@@ -18,11 +18,8 @@ sidebar-avatar: /img/home-bg.jpg      # use absolute URL, seeing it's used in bo
 
 # SNS settings
 RSS: false
-<<<<<<< HEAD
- weibo_username:    6072877745
-=======
+
  weibo_username:  6072877745/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1
->>>>>>> df5c6e46a1dc7472846bc229052142eb069aff3b
 #zhihu_username:     qiubaiying
 github_username:    YKitty
 #facebook_username:  baiying.qiu.7
