@@ -4,7 +4,7 @@ title:      NEW BEGINING
 subtitle:   新的博客，新的开始
 date:       2018-05-10
 author:     YKitty
-header-img: img/timg.jpg
+header-img: img/post-bg-mma-5
 catalog: true
 tags:
     -begin
