@@ -1,13 +1,13 @@
 # Site settings
-title:YKitty
-SEOTitle:YKitty Blog
+title: YKitty
+SEOTitle: YK||YKitty Blog
 header-img: img/post-bg-desk.jpg
 email: 991554637@qq.com
 description: "Every failure is leading towards success."
-keyword: "YK, YK Blog, iOS, Apple, iPhone"
+keyword: "YK, YK Blog, iOS, Apple"
 url: "http://YKitty.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/YKitty" # you code repository
+github_repo: "https://github.com/YKitty.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -103,7 +103,7 @@ friends: [
         href: "http://zhengwuyang.com"
     },{
         title: "flying",
-        href: "https://github.com/supercai"
+        href: "https://github.com/supercai.github.io"
     },{
         title: "Apple",
         href: "https://apple.com"
