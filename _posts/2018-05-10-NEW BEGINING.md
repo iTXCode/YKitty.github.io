@@ -1,3 +1,15 @@
+---
+layout:     post
+title:      NEW BEGINING
+subtitle:   新的博客，新的开始
+date:       2018-05-10
+author:     YKitty
+header-img: img/timg.jpg
+catalog: true
+tags:
+    -begin
+---
+
 # NEW BEGINING
 
 ## 新的博客，新的开始
