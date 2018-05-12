@@ -92,7 +92,7 @@ my_type *my_memcpy(my_table *dest, const my_type *src, size_t n)
 
 ## 对比
 
-####1. **memcpy函数与memmove函数进行对比**
+####1.**memcpy函数与memmove函数进行对比**
 
 - **memcpy函数对于处理内存不重叠的情况，memmove函数可以处理内存重叠的情况**
 
