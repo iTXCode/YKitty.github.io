@@ -94,8 +94,6 @@ my_type *my_memcpy(my_table *dest, const my_type *src, size_t n)
 
 ### 1.memcpy函数与memmove函数进行对比
 
-### 2.内存拷贝函数与字符串拷贝函数的对比
-
 - **memcpy函数对于处理内存不重叠的情况，memmove函数可以处理内存重叠的情况**
 
 分情况：
@@ -118,7 +116,7 @@ my_type *my_memcpy(my_table *dest, const my_type *src, size_t n)
 
 **memcpy的错误:**会将第一个和第二个拷贝过去的最后再拷贝到最后的第一个和第二个上。就会出现错误。
 
-###2.内存拷贝函数与字符串拷贝函数的对比
+### 2.内存拷贝函数与字符串拷贝函数的对比
 
 - 使用的类型不同，strcpy函数只对字符串进行操作；memmove函数和memcpy函数对所有类型都适用，为内存拷贝
 - strcpy函数以’\0’为拷贝的结束条件；而memmove函数和memcpy函数则是以第三个参数num进行控制拷贝
