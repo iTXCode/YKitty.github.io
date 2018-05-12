@@ -21,13 +21,13 @@ tags:
 
 ---
 
-###1.源函数
+### 1.源函数
 
 ```c
 void *memcpy(void *dest, const void *src, size_t n)
 ```
 
-###2.作用
+### 2.作用
 
 (小编自己的理解)内存拷贝。从src内存空间移动n个元素，将其赋值给dest的内存中，从内存中第一个地址所指向的数据开始赋值，直到赋值n个数据，该函数调用结束，同时返回dest，即返回被赋值的内存的起始位置。返回dest的意义是可是增加链接属性。
 
@@ -56,13 +56,13 @@ my_type *my_memcpy(my_table *dest, const my_type *src, size_t n)
 
 ## [memmove函数](https://baike.baidu.com/item/memmove/5494877)
 
-###1.源函数
+### 1.源函数
 
 ```c
 void *memmove(void *dest, const void *src, size_t n)
 ```
 
-###2.作用
+### 2.作用
 
 (小编自己的理解)内存拷贝。基本功能与memcpy函数一致。不一样的地方在于，若是目标区域与源区域有重叠的部分的话，可以在源区域未被目标区域覆盖的时候，将其拷贝到目标区域当中。从而实现内存拷贝的功能。
 
