@@ -50,7 +50,7 @@ my_type *my_memcpy(my_table *dest, const my_type *src, size_t n)
 }
 ```
 
-不了解assert函数的同学们，可以戳一戳[assert](https://baike.baidu.com/item/assert/10931289?fr=aladdin)了解一下哦！![img](file:///C:\Users\0\AppData\Local\Temp\SGPicFaceTpBq\15972\0FA6ACDC.png) 
+不了解assert函数的同学们，可以戳一戳[assert](https://baike.baidu.com/item/assert/10931289?fr=aladdin)了解一下哦！
 
 ---
 
@@ -118,8 +118,8 @@ my_type *my_memcpy(my_table *dest, const my_type *src, size_t n)
 
 #### 2.内存拷贝函数与字符串拷贝函数的对比
 
-- 使用的类型不同，strcpy()函数只对字符串进行操作；memmove()和memcpy()函数对所有类型都适用，为内存拷贝
-- strcpy()以’\0’为拷贝的结束条件；而memmove()和memcpy()函数则是以第三个参数num进行控制拷贝
+- 使用的类型不同，strcpy函数只对字符串进行操作；memmove函数和memcpy函数对所有类型都适用，为内存拷贝
+- strcpy函数以’\0’为拷贝的结束条件；而memmove函数和memcpy函数则是以第三个参数num进行控制拷贝
 
 
 
