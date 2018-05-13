@@ -34,21 +34,21 @@ void *memcpy(void *dest, const void *src, size_t n
 **memcpy函数实现**:**(my_memcpy)**原谅小编没有找到源代码
 
 ```c
-#include <assert.h> //包含assert函数的头文件
+#include <assert.h> //包含assert函数的头文件  
 
-void *my_memcpy(void *dest, const void *src, size_t n)//n表示拷贝几个字节的内存
-{
-    void *start = dest; //用于返回dest的初始地址,使该函数具有链接属性
-    assert(dest != NULL); //断言dest与src不是空地址
-    assert(src != NULL);    
-    while (n--)
-    {
-        *(char *)dest = *(char *)src; //强制转换为char *类型每次拷贝一个字节
-        dest = (char *)dest + 1; //使dest移向下一个字节的地址
-        src = (char *)src + 1;
-    }
-    return start;
-}
+void *my_memcpy(void *dest, const void *src, size_t n)//n表示拷贝几个字节的内存  
+{  
+    void *start = dest; //用于返回dest的初始地址,使该函数具有链接属性  
+    assert(dest != NULL); //断言dest与src不是空地址  
+    assert(src != NULL);      
+    while (n--)  
+    {  
+        *(char *)dest = *(char *)src; //强制转换为char *类型每次拷贝一个字节  
+        dest = (char *)dest + 1; //使dest移向下一个字节的地址  
+        src = (char *)src + 1;  
+    }  
+    return start;  
+}  
 ```
 
 不了解assert函数的同学们，可以戳一戳[assert](https://baike.baidu.com/item/assert/10931289?fr=aladdin)了解一下哦！ 
@@ -72,29 +72,29 @@ void *memmove(void *dest, const void *src, size_t n)
 **memmove函数的实现**:**(my_memmove)**原谅小编没有找到源代码
 
 ```c
-#include <assert.h> //包含assert函数的头文件
-
-void *my_memmove(void *dest, const void *src, size_t n)
-{
-    void *start = dest; //用于返回dest的初始地址,使该函数具有链接属性
-    assert(dest != NULL); //断言dest与src不是空地址
-    assert(src != NULL);
-    if (dest < src) //从前向后进行拷贝与memcpy函数一样
-    {
-        *(char *)dest = *(char *)src; //每次拷贝一个字节
-        dest = (char *)dest + 1; //与++*dest意思一样
-        src = (char *)src + 1;
-    }
-    else //从后向前进行拷贝
-    {
-         while (n--)
-    	{
-        	//从最后一个要拷贝的内存开始拷贝依次向前进行拷贝
-             *((char *)dest + n) = *((char *)src + n); //不需要再对n - 1,因为n--已经减过了 
-   	 	}
-    }
-    return start;
-}
+#include <assert.h> //包含assert函数的头文件  
+  
+void *my_memmove(void *dest, const void *src, size_t n)  
+{  
+    void *start = dest; //用于返回dest的初始地址,使该函数具有链接属性  
+    assert(dest != NULL); //断言dest与src不是空地址  
+    assert(src != NULL);  
+    if (dest < src) //从前向后进行拷贝与memcpy函数一样   
+    {  
+        *(char *)dest = *(char *)src; //每次拷贝一个字节  
+        dest = (char *)dest + 1; //与++*dest意思一样  
+        src = (char *)src + 1;  
+    }  
+    else //从后向前进行拷贝  
+    {  
+         while (n--)  
+    	{  
+        	//从最后一个要拷贝的内存开始拷贝依次向前进行拷贝  
+        	*((char *)dest + n) = *((char *)src + n); //不需要再对n - 1,因为n--已经减过了   
+   	 	}  
+    }  
+    return start;  
+}  
 ```
 
 ---
@@ -111,17 +111,17 @@ void *my_memmove(void *dest, const void *src, size_t n)
 
 ![](https://raw.githubusercontent.com/YKitty/YKitty.github.io/master/img/%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E5%87%BD%E6%95%B0/%E6%97%A0%E9%87%8D%E5%8F%A0%E6%83%85%E5%86%B5%E6%9C%80%E7%BB%88.png)
 
-<2>内存重叠,**(dest < src)**可以用memcpy函数
+<2>内存重叠，但不影响函数和使用
 
 ![](https://raw.githubusercontent.com/YKitty/YKitty.github.io/master/img/%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E5%87%BD%E6%95%B0/%E9%87%8D%E5%8F%A0%E4%B8%8D%E5%87%BA%E9%94%99.png)
 
-<3>内存重叠,**(dest > src)**只能用memmove函数
+<3>内存重叠只能用memmove函数
 
 ![](https://raw.githubusercontent.com/YKitty/YKitty.github.io/master/img/%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E5%87%BD%E6%95%B0/%E5%8F%AA%E8%83%BD%E7%94%A8memmove%E5%87%BD%E6%95%B0%E7%9A%84.png)
 
 - **原理区别**
 
-**原理:**memcpy函数是从左边一个一个的将src中的值拷贝到dest中，二memmove函数是既可以从左边拷贝又可以从右边开始拷贝的。所以对于memcpy函数只有<1><2>情况可以使用，二对于<3>情况则会出现问题。而memmove函数就不会出现错误。
+**原理:**memcpy函数是从左边一个一个的将src中的值拷贝到dest中，二memmove函数是从右边开始拷贝的。所以对于memcpy函数只有<1><2>情况可以使用，二对于<3>情况则会出现问题。而memmove函数因为是从右边开始拷贝的就不会出现错误。
 
 **memcpy的错误:**会将第一个和第二个拷贝过去的最后再拷贝到最后的第一个和第二个上。就会出现错误。
 
