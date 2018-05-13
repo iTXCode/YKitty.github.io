@@ -111,17 +111,17 @@ void *my_memmove(void *dest, const void *src, size_t n)
 
 ![](https://raw.githubusercontent.com/YKitty/YKitty.github.io/master/img/%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E5%87%BD%E6%95%B0/%E6%97%A0%E9%87%8D%E5%8F%A0%E6%83%85%E5%86%B5%E6%9C%80%E7%BB%88.png)
 
-<2>内存重叠，但不影响函数和使用
+<2>内存重叠,**(dest < src)**可以用memcpy函数
 
 ![](https://raw.githubusercontent.com/YKitty/YKitty.github.io/master/img/%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E5%87%BD%E6%95%B0/%E9%87%8D%E5%8F%A0%E4%B8%8D%E5%87%BA%E9%94%99.png)
 
-<3>内存重叠只能用memmove函数
+<3>内存重叠,**(dest > src)**只能用memmove函数
 
 ![](https://raw.githubusercontent.com/YKitty/YKitty.github.io/master/img/%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E5%87%BD%E6%95%B0/%E5%8F%AA%E8%83%BD%E7%94%A8memmove%E5%87%BD%E6%95%B0%E7%9A%84.png)
 
 - **原理区别**
 
-**原理:**memcpy函数是从左边一个一个的将src中的值拷贝到dest中，二memmove函数是从右边开始拷贝的。所以对于memcpy函数只有<1><2>情况可以使用，二对于<3>情况则会出现问题。而memmove函数因为是从右边开始拷贝的就不会出现错误。
+**原理:**memcpy函数是从左边一个一个的将src中的值拷贝到dest中，二memmove函数是既可以从左边拷贝又可以从右边开始拷贝的。所以对于memcpy函数只有<1><2>情况可以使用，二对于<3>情况则会出现问题。而memmove函数就不会出现错误。
 
 **memcpy的错误:**会将第一个和第二个拷贝过去的最后再拷贝到最后的第一个和第二个上。就会出现错误。
 
