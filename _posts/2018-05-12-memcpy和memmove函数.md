@@ -109,7 +109,7 @@ void *my_memmove(void *dest, const void *src, size_t n)
 
 <1> 内存不重叠
 
-![](https://raw.githubusercontent.com/YKitty/YKitty.github.io/master/img/%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E5%87%BD%E6%95%B0/%E9%87%8D%E5%8F%A0%E4%B8%8D%E5%87%BA%E9%94%99.png)
+![](https://raw.githubusercontent.com/YKitty/YKitty.github.io/master/img/%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E5%87%BD%E6%95%B0/%E6%97%A0%E9%87%8D%E5%8F%A0%E6%83%85%E5%86%B5%E6%9C%80%E7%BB%88.png)
 
 <2>内存重叠，但不影响函数和使用
 
