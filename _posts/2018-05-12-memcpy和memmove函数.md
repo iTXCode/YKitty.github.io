@@ -90,7 +90,7 @@ void *my_memmove(void *dest, const void *src, size_t n)
          while (n--)
     	{
         	//从最后一个要拷贝的内存开始拷贝依次向前进行拷贝
-        	*((char *)dest + n) = *((char *)src + n); //不需要再对n - 1,因为n--已经减过了 
+             *((char *)dest + n) = *((char *)src + n); //不需要再对n - 1,因为n--已经减过了 
    	 	}
     }
     return start;
